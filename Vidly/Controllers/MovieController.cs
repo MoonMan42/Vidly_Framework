@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Ajax.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,10 +14,22 @@ namespace Vidly.Controllers
         public ActionResult Index()
         {
             
-            return View(GetMovies());
+            return View(GetMovies().ToList());
         }
 
-       private IEnumerable<Movie> GetMovies()
+        public ActionResult Details(int id)
+        {
+            var movie = GetMovies().FirstOrDefault(m => m.Id == id);
+
+            if (movie == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(movie);
+        }
+
+        private IEnumerable<Movie> GetMovies()
         {
             return new List<Movie>{
                 new Movie { Id=1, Name="Wall-e"}, 
