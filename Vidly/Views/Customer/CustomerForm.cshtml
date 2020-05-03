@@ -5,7 +5,7 @@
 
 <h2>New Customer</h2>
 
-@using (Html.BeginForm("Create", "Customer"))
+@using (Html.BeginForm("Save", "Customer"))
 {
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.Name)
@@ -13,7 +13,7 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.BirthDate)
-        @Html.TextBoxFor(m => m.Customer.BirthDate, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.Customer.BirthDate, "{0:d MMM yyyy}", new { @class = "form-control" })
     </div>
 
 
@@ -29,6 +29,8 @@
     </div>
 
     <button class="btn btn-primary" type="submit">Save</button>
+
+    @Html.HiddenFor(m => m.Customer.Id)
 
 }
 
