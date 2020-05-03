@@ -6,7 +6,9 @@
 
 <h2>Customer</h2>
 
-
+<div class="form-group">
+    @Html.ActionLink("Add customer", "New", "Customer", new { @class = "btn btn-primary" })
+</div>
 @if (!Model.Any())
 {
     <p>No customers have been added!</p>
