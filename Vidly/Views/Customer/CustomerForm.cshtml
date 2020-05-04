@@ -7,7 +7,7 @@
 
 @using (Html.BeginForm("Save", "Customer"))
 {
-    @Html.ValidationSummary(true, "Please resolve the following errors.");
+    @Html.ValidationSummary(true, "Please resolve the following errors.")
 
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.Name)
@@ -33,6 +33,8 @@
     <button class="btn btn-primary" type="submit">Save</button>
 
     @Html.HiddenFor(m => m.Customer.Id)
+
+    @Html.AntiForgeryToken(); @* helps prevent antiforgery tokens *@
 
 }
 
