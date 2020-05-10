@@ -243,6 +243,10 @@
     <Compile Include="Migrations\202005021716016_AddNumberInStock.Designer.cs">
       <DependentUpon>202005021716016_AddNumberInStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005100016504_seedUsers.cs" />
+    <Compile Include="Migrations\202005100016504_seedUsers.Designer.cs">
+      <DependentUpon>202005100016504_seedUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -549,6 +553,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005021716016_AddNumberInStock.resx">
       <DependentUpon>202005021716016_AddNumberInStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005100016504_seedUsers.resx">
+      <DependentUpon>202005100016504_seedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
