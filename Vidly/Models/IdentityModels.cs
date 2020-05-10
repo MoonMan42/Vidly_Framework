@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
+using System.Globalization;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -13,6 +14,11 @@ namespace Vidly.Models
         [Required]
         [StringLength(255)]
         public string DrivingLicense { get; set; }
+
+        [Required]
+        [StringLength(55)]
+        [Display(Name = "Phone")]
+        public string Phone { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
