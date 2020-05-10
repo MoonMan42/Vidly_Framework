@@ -9,11 +9,13 @@ namespace Vidly.Controllers
     [AllowAnonymous]
     public class HomeController : Controller
     {
+        [OutputCache(Duration =50, Location = System.Web.UI.OutputCacheLocation.Server, VaryByParam ="*")]
         public ActionResult Index()
         {
             return View();
         }
 
+        [OutputCache(Duration = 0, VaryByParam = "*", NoStore = true)] // disable caching
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
