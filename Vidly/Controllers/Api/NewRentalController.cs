@@ -22,8 +22,13 @@ namespace Vidly.Controllers.Api
         [HttpPost]
         public IHttpActionResult CreateNewRentals (NewRentalDto newRentalDto)
         {
-            var customer = _context.Customers.Single(
+            var customer = _context.Customers.SingleOrDefault(
                 c => c.Id == newRentalDto.CustomerId);
+
+            if (customer == null)
+            {
+                return BadRequest("Invalid customer Id.");
+            }
 
             var movies = _context.Movies.Where(
                 m => newRentalDto.MovieIds.Contains(m.Id)).ToList();

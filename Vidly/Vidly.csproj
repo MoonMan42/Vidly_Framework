@@ -282,6 +282,10 @@
     <Compile Include="Migrations\202005150029101_AddRentalsTable.Designer.cs">
       <DependentUpon>202005150029101_AddRentalsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005150050167_UpdateNumberAvailableInMoives.cs" />
+    <Compile Include="Migrations\202005150050167_UpdateNumberAvailableInMoives.Designer.cs">
+      <DependentUpon>202005150050167_UpdateNumberAvailableInMoives.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -606,6 +610,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005150029101_AddRentalsTable.resx">
       <DependentUpon>202005150029101_AddRentalsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005150050167_UpdateNumberAvailableInMoives.resx">
+      <DependentUpon>202005150050167_UpdateNumberAvailableInMoives.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
