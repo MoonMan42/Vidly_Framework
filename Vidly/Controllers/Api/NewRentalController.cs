@@ -33,6 +33,9 @@ namespace Vidly.Controllers.Api
             var movies = _context.Movies.Where(
                 m => newRentalDto.MovieIds.Contains(m.Id)).ToList();
 
+            if (movies.Count != newRentalDto.MovieIds.Count)
+                return BadRequest("OneOrMore Movie Ids are invalid.");
+
             foreach (var movie in movies)
             {
                 if (movie.NumberAvailable == 0)
